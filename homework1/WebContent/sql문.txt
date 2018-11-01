@@ -1,0 +1,10 @@
+create table userU(
+	user_id varchar2(20),
+	password varchar2(20),
+	user_name varchar2(20),
+	email varchar(30),
+	reg_date timestamp,
+	gender number
+);
+
+insert into userU values('test1', '1234', 'ÀÌ¼ø½Å', 'lee@gmail.co.kr', sysdate, 1);
