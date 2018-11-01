@@ -13,7 +13,7 @@
 	<update id="updateUser" parameterType="userDataBean">
 		0
 	</update>
-	<delete id="deleteUser" parameterType="String" resultType="int">
+	<delete id="deleteUser" parameterType="String">
 		delete from userU where user_id=#{user_id}
 	</delete>
 
