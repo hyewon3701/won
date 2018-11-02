@@ -11,12 +11,14 @@
 			value(#{user_id}, #{password}, #{user_name}, #{email}, #{reg_date}, #{gender})
 	</insert>
 	<update id="updateUser" parameterType="userDataBean">
-		0
+		update userU set password=#{password},user_name=#{user_name}, email=#{email} where user_id=#{user_id}
 	</update>
-	<delete id="deleteUser" parameterType="String" resultType="int">
+	<delete id="deleteUser" parameterType="String">
 		delete from userU where user_id=#{user_id}
 	</delete>
-
+	<select id="check" parameterType="userDataBean" resultType="userDataBean">
+	     select * from userU where user_id=#{user_id}, password=#{password} 
+	</select>
 
 
 </mapper>

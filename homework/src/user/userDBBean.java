@@ -19,4 +19,7 @@ public class userDBBean {
 	public int updateUser(userDataBean userDto) {
 		return session.update("user.updateUser", userDto);
 	}
+	public int check(userDataBean userDto) {
+		return session.selectOne("user.check", userDto);
+	}
 }
