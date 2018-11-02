@@ -1,5 +1,6 @@
 package user;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,7 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class logInHd implements userHandler {
-	
+	@Resource
+	public userDBBean userDao;
 	@Override
 	@RequestMapping("/login")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse Response) throws userException {
