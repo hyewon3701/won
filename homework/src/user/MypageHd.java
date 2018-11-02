@@ -8,15 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
-public class mypageHd implements userHandler {
+public class MypageHd implements UserHandler {
 	@Resource
-	public userDBBean userDao;
+	public UserDBBean userDao;
 	@RequestMapping("mypage")
 	@Override
-	public ModelAndView process(HttpServletRequest request, HttpServletResponse Response) throws userException {
+	public ModelAndView process(HttpServletRequest request, HttpServletResponse Response) throws UserException {
 		String user_id = (String) request.getSession().getAttribute("user_id");
-		userDao.getUser(user_id);
-		
+		UserDataBean userDto = userDao.getUser(user_id);
+		request.setAttribute("userDto", userDto);
 		return new ModelAndView("/mypage");
 	}
 

@@ -18,8 +18,8 @@ public class CreateBean {
 	}
 	
 	@Bean
-	public userDBBean userDao() {
-		userDBBean userDao = new userDBBean();
+	public UserDBBean userDao() {
+		UserDBBean userDao = new UserDBBean();
 		return userDao;
 	}
 }

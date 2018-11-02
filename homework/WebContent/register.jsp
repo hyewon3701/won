@@ -5,7 +5,7 @@
 <c:if test="${result eq 0}">
 	<script type="text/javascript">
 		<!--
-		alert('아이디와 비밀번호가 일치하지 않습니다');
+		alert('가입하지않았습니다');
 		//-->
 	</script>
 </c:if>
@@ -42,7 +42,7 @@
 	</div>
 	<div class="email">
 		<span class="col1">이메일</span>
-		<span class="col2"><input type="email" name="email" placeholder="이메일을 입력하세요"></span>
+		<span class="col2"><input type="text" name="email" placeholder="이메일을 입력하세요"></span>
 		<span class="col3"></span>
 	</div>
 	<div class="button">
