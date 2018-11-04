@@ -12,8 +12,8 @@ public class UserDBBean {
 	public int intoUser(UserDataBean userDto) {
 		return session.insert("user.intoUser", userDto);
 	}
-	public int deleteUser(UserDataBean userDto) {
-		return session.delete("user.deleteUser", userDto);
+	public int deleteUser(String user_id) {
+		return session.delete("user.deleteUser", user_id);
 	}
 	public int updateUser(UserDataBean userDto) {
 		return session.update("user.updateUser", userDto);

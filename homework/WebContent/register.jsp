@@ -49,5 +49,4 @@
 		<span class="col2"><input type="submit" name="register" value="가입"></span>
 		<span class="col3"><input type="reset" value="취소"></span>
 	</div>
-
 </form>
