@@ -11,14 +11,14 @@
 	</script>
 </c:if>
 <c:if test="${result eq 1}">
-	<c:redirect url="login.start"/>		
+	<c:redirect url="mypage.start"/>		
 </c:if>
 
 <form method="post" action="change.start">
 
 	<div class="id">
 		<span class="col1">아이디</span>
-		<span class="col2">${userDto.id}</span>
+		<span class="col2">${userDto.user_id}</span>
 		<span class="col3"></span>
 	</div>
 	<div class="passwd">
@@ -42,7 +42,7 @@
 	</div>
 	<div class="email">
 		<span class="col1">이메일</span>
-		<span class="col2"><input type="text" name="email" placeholder="${useDto.email}"></span>
+		<span class="col2"><input type="text" name="email" placeholder="${useDto.getemail}"></span>
 		<span class="col3"></span>
 	</div>
 	<div class="button">

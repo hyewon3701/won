@@ -16,8 +16,9 @@
 	<c:if test="${userDto.gender eq 2 }">
 	남성
 </c:if>
-<br>
-<br>
-<a href="change.start">정보변경</a>
-<a href="delete.start">회원탈퇴<a>
 </h2>
+
+<br>
+<br>
+<a href="change.start">정보수정</a>
+<a href="delete.start">회원탈퇴</a>

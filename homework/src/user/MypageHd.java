@@ -17,6 +17,7 @@ public class MypageHd implements UserHandler {
 		String user_id = (String) request.getSession().getAttribute("user_id");
 		UserDataBean userDto = userDao.getUser(user_id);
 		request.setAttribute("userDto", userDto);
+		request.getSession().setAttribute("user_id", user_id);
 		return new ModelAndView("/mypage");
 	}
 
