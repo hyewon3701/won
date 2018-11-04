@@ -2,21 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
-<mapper namespace="use">
-	<select id="getUser" resultType="userDataBean">
-		select * from userU where user_id=#{user_id}
+<mapper namespace="user">
+	<select id="getUser" parameterType="String" resultType="user.UserDataBean">
+		select * from userU where user_id=#{user_id, jdbcType=VARCHAR}
 	</select>
-	<insert id="intoUser" parameterType="userDataBean">
-		insert into userU(user_id, password, user_name, email, reg_date, gender)
-			value(#{user_id}, #{password}, #{user_name}, #{email}, #{reg_date}, #{gender})
+	<insert id="intoUser" parameterType="user.UserDataBean">
+		insert into userU
+			values(#{user_id}, #{password}, #{user_name}, #{email}, sysdate, #{gender})
 	</insert>
-	<update id="updateUser" parameterType="userDataBean">
-		0
+	<update id="updateUser" parameterType="user.UserDataBean">
+		update userU set password=#{password},user_name=#{user_name}, email=#{email} where user_id=#{user_id}
 	</update>
-	<delete id="deleteUser" parameterType="String" resultType="int">
+	<delete id="deleteUser" parameterType="String">
 		delete from userU where user_id=#{user_id}
 	</delete>
-
-
+	<select id="check" parameterType="String" resultType="int">
+	     select count(*) from userU where user_id=#{user_id}
+	</select>
+	<select id="checkId" parameterType="String" resultType="user.UserDataBean">
+		select * from userU where user_id=#{user_id}
+	</select>
 
 </mapper>

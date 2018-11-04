@@ -2,7 +2,7 @@ package user;
 
 import java.sql.Timestamp;
 
-public class userDataBean {
+public class UserDataBean {
 	private String user_id;
 	private String password;
 	private String user_name;

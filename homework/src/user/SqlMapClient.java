@@ -11,16 +11,16 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class SqlMapClient {
 	private static SqlSession session;
 		static {
-			String resource = "/sqlMapConfig.xml";
 			try {
-				Reader reader = Resources.getResourceAsReader( resource);
-				SqlSessionFactory sqlMapper = new SqlSessionFactoryBuilder().build(reader);
-				session = sqlMapper.openSession();
-			}catch(IOException e){
+				Reader reader = Resources.getResourceAsReader("user/sqlMapConfig.xml");
+				SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
+				session = factory.openSession(true);				// true 면 오토커밋
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-	public static SqlSession getSqlSession() {
+	public static SqlSession getSession() {
 		return session;
-	}
+	} 
 }
