@@ -22,3 +22,4 @@
 <br>
 <a href="change.start">정보수정</a>
 <a href="delete.start">회원탈퇴</a>
+<a href="logout.start">로그아웃</a>

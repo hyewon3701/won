@@ -23,7 +23,7 @@ public class LoginHd implements UserHandler {
 			String passwd = request.getParameter("passwd");
 			int result;			
 			int consequence = userDao.check(user_id);
-			System.out.println(consequence);
+			
 			if(consequence >0) {
 				result = userDao.userLogin(user_id, passwd);				
 			}else {

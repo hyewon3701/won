@@ -16,8 +16,7 @@ public class ChangeInfo implements UserHandler {
 	@RequestMapping("change")
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse Response) throws UserException {
 		if(request.getParameter("change")==null) {
-			String user_id = request.getParameter("user_id");
-		
+			String user_id =  (String) request.getSession().getAttribute("user_id");	
 			UserDataBean userDto = userDao.getUser(user_id);
 			request.setAttribute("userDto", userDto);
 			return new ModelAndView("changeinfo");
